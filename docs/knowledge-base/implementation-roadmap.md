@@ -19,6 +19,10 @@ Implement and verify one phase at a time. Do not generate the whole application 
 
 **Exit criteria:** app starts, lint/type-check/build pass, Playwright can launch the app and run a smoke test, and base layout works at mobile and desktop sizes.
 
+**Status:** Completed for the initial foundation. The home/story browser flow and
+mobile overflow are covered; dedicated topic pages and verified contact details
+remain in later phases.
+
 ## Phase 2 — Domain contracts and mock services
 - Add typed domain entities and service interfaces.
 - Implement mock story and travel services.

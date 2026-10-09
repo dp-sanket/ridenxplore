@@ -30,6 +30,11 @@ These are illustrative contracts, not a promise that the eventual backend uses t
 - Never claim a contact message was emailed or a newsletter subscription was persisted if it was only simulated.
 - Do not create an API route or database merely to make the mock work unless there is a clear reason.
 
+The initial frontend uses a `StoryService` contract and a mock implementation
+selected centrally by `getStoryService()`. Its sample stories are illustrative
+and must be replaced with owner-reviewed content. Travel, contact, and
+newsletter adapters are not yet implemented.
+
 ## Future HTTP adapter
 - Centralize the base URL in a server-only environment variable such as `API_BASE_URL`.
 - Never expose secrets to browser bundles.
