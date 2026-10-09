@@ -1,6 +1,6 @@
 # RideNXplore — AI Engineering Kit
 
-This kit establishes the project knowledge base and a workspace custom agent for building RideNXplore with Next.js App Router, React, strict TypeScript, Tailwind CSS, Zustand, and a replaceable mock API.
+This kit establishes the project knowledge base and a workspace custom agent for building RideNXplore with Next.js App Router, React, strict TypeScript, Tailwind CSS, Zustand, a replaceable mock API, and Playwright UI testing.
 
 ## Start here
 
@@ -13,7 +13,7 @@ This kit establishes the project knowledge base and a workspace custom agent for
 
 ## Recommended first prompt
 
-> Read `docs/SRS.md`, `docs/knowledge-base/`, and `.github/copilot-instructions.md`. Inspect the repository and report its current state. Do not modify files yet. Produce a phased implementation plan with dependencies, acceptance criteria, and test commands. Identify any conflicts between the existing code and the project standards.
+> Read `docs/SRS.md`, all relevant files in `docs/knowledge-base/`, and `.github/copilot-instructions.md`. Inspect the repository structure, package manager, Git status, existing scripts, and current implementation. Then proceed autonomously: implement the highest-priority incomplete phase in small increments without asking permission for routine file writes/edits. Use Next.js App Router, strict TypeScript, Tailwind CSS, Zustand only when shared UI state is needed, and the typed mock API layer. Use Playwright Test for browser UI/end-to-end coverage and add or update tests for user-visible changes. Check Playwright Component Testing compatibility before choosing it for isolated components. Run available lint, type-check, relevant Playwright tests, and production build; fix issues introduced by your changes and report exact commands/results. Preserve unrelated work. Do not commit, push, deploy, or perform destructive operations. If blocked, explain the blocker and continue with independent tasks.
 
 ## How the kit is organized
 
@@ -26,11 +26,12 @@ This kit establishes the project knowledge base and a workspace custom agent for
 ## Important operating rules
 
 - Work in small, reviewable increments; do not ask the agent to build the whole site in one pass.
-- Require the agent to run available lint, type-check, test, and build commands after changes.
+- Require the agent to run available lint, type-check, relevant Playwright UI/e2e tests, and build commands after changes.
 - Review the diff before accepting changes.
 - Do not let an agent commit, push, publish, or perform destructive operations unless explicitly asked.
 - Never put real secrets in source control.
 - The mock API must implement the same typed contract intended for the future server API.
+- Playwright is the preferred browser UI/e2e test framework. Component testing should use Playwright Component Testing only when compatible with the installed Next.js setup.
 
 ## Suggested project bootstrap
 

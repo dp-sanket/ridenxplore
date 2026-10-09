@@ -17,4 +17,4 @@ Copy and fill this prompt for one feature at a time.
 > - [criterion 2]
 > - [criterion 3]
 >
-> First inspect existing code and list the files you expect to change. Then implement the smallest complete slice, run the relevant checks available in the repository, inspect the diff, and report the exact commands/results plus any limitations. Do not commit, push, or deploy.
+> First inspect existing code and list the files you expect to change. Then implement the smallest complete slice, add or update relevant Playwright UI/e2e coverage for visible behavior, run the relevant checks available in the repository, inspect the diff, and report the exact commands/results plus any limitations. Check compatibility before using Playwright Component Testing for isolated components. Do not commit, push, or deploy.

@@ -50,3 +50,16 @@
 - Run type-check, lint, relevant tests, and production build when available.
 - If no type-check script exists, use the project's documented TypeScript command or recommend adding a script.
 - Report actual command output; do not claim a pass if a command was skipped or failed.
+
+
+## Testing standards
+- Playwright Test is the preferred framework for browser-based UI and end-to-end tests.
+- Cover important user journeys and visible behavior: navigation, links, forms and validation, loading/empty/error states, and responsive layouts where relevant.
+- Add or update tests when changing behavior; keep tests close to user-visible acceptance criteria.
+- Prefer accessible locators such as `getByRole`, `getByLabel`, and `getByText` over fragile CSS/XPath selectors.
+- Avoid fixed-time sleeps. Wait for a meaningful UI state or network condition.
+- Keep tests deterministic: use mock data/services where appropriate, isolate test data, and avoid depending on real booking availability or external systems.
+- Use Playwright traces/screenshots on failure when supported by the existing configuration.
+- Playwright Component Testing may be used for isolated React component tests only after checking compatibility with the installed Next.js/React setup. If it is not a good fit, exercise the component through a focused route using Playwright Test rather than forcing an unstable integration.
+- Reuse existing scripts/configuration and the repository's package manager. Do not add a second test runner or dependencies without a clear need.
+- Report exact test commands and actual results; distinguish tests not run from tests that passed.

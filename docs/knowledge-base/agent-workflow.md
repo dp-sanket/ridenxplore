@@ -12,13 +12,13 @@ Avoid running multiple agents that edit the same files simultaneously.
 1. Ask for repository inspection and plan.
 2. Review the plan and agree on the next small vertical slice.
 3. Ask the agent to implement only that slice.
-4. Require type-check, lint, tests, and build as available.
+4. Require type-check, lint, relevant Playwright UI/e2e tests, and build as available.
 5. Review the diff and manually inspect UI behavior.
 6. Update documentation when a decision or contract changes.
 7. Commit manually after review, using a focused commit message.
 
 ## Good task size
-Good: “Implement the Story domain type and mock StoryService, add unit tests, and report checks.”
+Good: “Implement the Story card and mock StoryService, add Playwright coverage for the visible interaction, and report checks.”
 Too broad: “Build the complete website with all pages, APIs, styling, and tests.”
 
 ## Reusable task template

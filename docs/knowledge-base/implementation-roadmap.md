@@ -13,16 +13,18 @@ Implement and verify one phase at a time. Do not generate the whole application 
 ## Phase 1 — Foundation
 - Establish or validate Next.js App Router setup.
 - Ensure strict TypeScript, ESLint, Tailwind, and import alias are configured.
+- Establish Playwright Test configuration, base URL, scripts, and browser setup using the existing package manager.
 - Create global layout, shared navigation, footer, responsive shell, and not-found page.
 - Define initial design tokens and component conventions.
 
-**Exit criteria:** app starts, lint/type-check/build pass, base layout works at mobile and desktop sizes.
+**Exit criteria:** app starts, lint/type-check/build pass, Playwright can launch the app and run a smoke test, and base layout works at mobile and desktop sizes.
 
 ## Phase 2 — Domain contracts and mock services
 - Add typed domain entities and service interfaces.
 - Implement mock story and travel services.
 - Add loading/empty/error behavior.
-- Add unit tests for mapping and service behavior where test tooling exists.
+- Add Playwright coverage for user-visible behavior and critical routes; use focused component tests only where supported by the installed setup.
+- Add unit tests for pure mapping/service logic if a suitable existing unit-test runner is already configured or separately justified.
 
 **Exit criteria:** UI does not import fixture files directly; services are replaceable without rewriting components.
 
@@ -49,7 +51,8 @@ Implement and verify one phase at a time. Do not generate the whole application 
 
 ## Phase 6 — Quality pass
 - Responsive review, accessibility review, metadata/SEO, image optimization, broken-link check.
-- Run lint, type-check, tests, and production build.
+- Run lint, type-check, relevant Playwright UI/e2e tests, and production build.
+- Check critical flows at desktop and mobile viewports; inspect screenshots/traces for failures when available.
 - Fix critical issues before considering optional features.
 
 **Exit criteria:** checks and known limitations documented.

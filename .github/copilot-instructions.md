@@ -9,6 +9,7 @@ Build and maintain RideNXplore as a high-quality, responsive content website for
 - Tailwind CSS for styling; use the installed project's supported version and conventions.
 - Zustand only for shared client-side UI state where component-local state is insufficient.
 - Typed data-access interfaces with a mock implementation initially and a replaceable real API implementation later.
+- Playwright Test as the preferred framework for browser UI and end-to-end testing; evaluate Playwright Component Testing for isolated components only when compatible with the current Next.js setup.
 - Use the package manager already established by the repository; do not introduce a second lockfile.
 
 ## Engineering rules
@@ -24,14 +25,15 @@ Build and maintain RideNXplore as a high-quality, responsive content website for
 10. Do not hardcode secrets, credentials, tokens, or environment-specific hostnames.
 11. Do not add a dependency without explaining why it is needed and checking whether the existing stack can solve the problem.
 12. Keep public content and metadata search-engine friendly.
-13. Never claim a command or test passed unless it was actually run and its result was observed.
-14. Do not commit, push, deploy, delete data, or run destructive commands unless the user explicitly requests that action.
+13. Add or update relevant Playwright tests for user-visible behavior, using accessible locators and deterministic waits.
+14. Never claim a command or test passed unless it was actually run and its result was observed.
+15. Do not commit, push, deploy, delete data, or run destructive commands unless the user explicitly requests that action.
 
 ## Definition of done
 - Requirements and acceptance criteria are addressed.
 - TypeScript type-check passes.
 - Lint passes.
-- Relevant tests pass or any unavailable test infrastructure is clearly reported.
+- Relevant Playwright UI/e2e tests pass, or unavailable test infrastructure and limitations are clearly reported.
 - Production build passes when feasible.
 - UI states and responsive behavior are considered.
 - No unrelated changes or unexplained dependencies are introduced.
